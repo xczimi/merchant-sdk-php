@@ -32,12 +32,38 @@ class PPBaseService {
 	public function getAccessToken() {
 		return $this->accessToken;
 	}
-	public function setAccessToken($accessToken) {
+	/**
+	 * @deprecated
+	 * For using third party token permissions, 
+	 * create a ICredential object and pass it to the
+	 * call() method instead. 
+	 *
+	 *<pre>
+	 * $service = new *Service();
+	 * $cred = new PPSignatureCredential("username", "password", "signature");
+	 * $cred->setThirdPartyAuthorization(new PPTokenAuthorization("accessToken", "tokenSecret"));
+	 * $service->SomeOperation($reqObject, $cred); 
+	 *</pre>	 
+	 */
+ 	public function setAccessToken($accessToken) {
 		$this->accessToken = $accessToken;
 	}
 	public function getTokenSecret() {
 		return $this->tokenSecret;
 	}
+	/**
+	 * @deprecated
+	 * For using third party token permissions, 
+	 * create a ICredential object and pass it to the
+	 * call() method instead. 
+	 *
+	 *<pre>
+	 * $service = new *Service();
+	 * $cred = new PPSignatureCredential("username", "password", "signature");
+	 * $cred->setThirdPartyAuthorization(new PPTokenAuthorization("accessToken", "tokenSecret"));
+	 * $service->SomeOperation($reqObject, $cred); 
+	 *</pre>	 
+	 */
 	public function setTokenSecret($tokenSecret) {
 		$this->tokenSecret = $tokenSecret;
 	}
@@ -69,10 +95,4 @@ class PPBaseService {
 		$this->lastResponse = $ret['response'];
 		return $this->lastResponse;
 	}
-
-    private function marshall($object) {
-		$transformer = new PPObjectTransformer();
-		return $transformer->toString($object);
-	}
 }
-?>
