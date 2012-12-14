@@ -1,0 +1,25 @@
+{
+    "name":"paypal/merchant",
+    "type":"library",
+    "description":"PayPal PHP Merchant SDK",
+    "keywords":["paypal"],
+    "license":["SDK"],
+    "authors":[
+        {
+            "name":"PayPal, Inc.",
+            "homepage":"https://www.x.com/developers/paypal/"
+        },
+        {
+            "name":"Community",
+            "homepage":"https://github.com/paypal/SDKs/graphs/contributors"
+        }
+    ],
+    "require":{
+        "php":">=5.2",
+        "ext-curl":"*",
+        "paypal/common":"self.version"
+    },
+    "autoload":{
+        "classmap":["lib/"]
+    }
+}
