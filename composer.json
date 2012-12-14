@@ -1,5 +1,5 @@
 {
-    "name":"paypal/merchant",
+    "name":"paypal/merchant-sdk",
     "type":"library",
     "description":"PayPal PHP Merchant SDK",
     "keywords":["paypal"],
@@ -16,8 +16,7 @@
     ],
     "require":{
         "php":">=5.2",
-        "ext-curl":"*",
-        "paypal/common":"self.version"
+        "ext-curl":"*"
     },
     "autoload":{
         "classmap":["lib/"]
